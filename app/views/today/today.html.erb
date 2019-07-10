@@ -1,1 +1,30 @@
-<%= @today_apix.location%>
+<div class="main_cont container row">
+  <div class="apixu col-md-6"">
+      <h1>ApiXu</h1>
+      <div class="apixu_data">
+          <%= @today_apix.location %> <br>
+          <%= @today_apix.time %> |  
+          <%= @today_apix.condition %> <br>
+          <h2>
+            <% if @today_apix.temperature > 0 %> 
+              +
+            <% end %>
+            <%= @today_apix.temperature %>  
+          </h2>
+      </div>
+  </div>
+  <div class="dark col-md-6"">
+      <h1>Dark Sky</h1>
+      <div class="dark_data">
+          <%= @today_dark.location %> <br>
+          <%= @today_dark.time %> |  
+          <%= @today_dark.condition %> <br>
+          <h2>
+              <% if @today_dark.temperature > 0 %> 
+                +
+              <% end %>
+              <%= @today_dark.temperature %>  
+            </h2>
+      </div>
+  </div>
+</div>

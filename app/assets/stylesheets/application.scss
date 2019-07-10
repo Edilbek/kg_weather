@@ -15,3 +15,18 @@
  */
 
  @import "bootstrap";
+
+.main_cont {
+  widows: 90%;
+  margin: 0 auto;
+  margin-top: 50px;
+}
+
+.apixu, .dark {
+  padding-left: 10%;   
+}
+
+.apixu_data, .dark_data {
+  padding: 10px;
+  border: 2px solid grey;
+}
