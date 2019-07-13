@@ -1,0 +1,15 @@
+<% @apixu_forecast.each do |day| %>
+  <%= day[:date] %> |
+  <%= day[:max_temp] %> |
+  <%= day[:min_temp] %> |
+  <%= day[:condition] %><br>
+<% end %>
+
+<hr>
+
+<% @dark_forecast.each do |day| %>
+  <%= day[:date] %> |
+  <%= day[:max_temp] %> |
+  <%= day[:min_temp] %> |
+  <%= day[:condition] %><br>
+<% end %>

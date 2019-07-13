@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item">
-        <%= link_to "5 days weather forecast", five_day_path, class: "nav-link" %>
+        <%= link_to 'Forecast for 5 days', five_day_path(city: "#{@city}", day: 5)%>
       </li>
     </ul>
   </div>
