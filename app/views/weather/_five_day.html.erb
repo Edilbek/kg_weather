@@ -1,0 +1,27 @@
+<div class="apixu">
+  <h4>Apixu</h4>
+  <div class="row five_day">
+    <% @apixu_forecast.each do |day| %>
+      <div class="col-md-2">
+        <b><%= day[:date] %></b><br>
+        day +<%= day[:max_temp] %><br>
+        night +<%= day[:min_temp] %><br>
+        <%= day[:condition] %><br>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<div class="dark_sky" style="margin-top: 30px;">
+  <h4>Dark Sky</h4>
+  <div class="row five_day">
+    <% @dark_forecast.each do |day| %>
+      <div class="col-md-2">
+        <b><%= day[:date] %></b><br>
+        +<%= day[:max_temp] %><br>
+        +<%= day[:min_temp] %><br>
+        <%= day[:condition] %><br>
+      </div>
+    <% end %>
+  </div>
+</div>

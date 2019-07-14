@@ -1,0 +1,11 @@
+<div class="container main_cont">
+  <h1 align='center'>Forecast for Kyrgyzstan</h1>
+  <div class="row" align='center'>
+    <div class="col-md-6">
+      <%= link_to "Forecast for 1 day", five_day_path(city: "Bishkek", day: 1), class: 'btn btn-primary' %>
+    </div>
+    <div class="col-md-6">
+      <%= link_to "Forecast for 5 days", five_day_path(city: "Bishkek", day: 5), class: 'btn btn-primary' %>
+    </div>
+  </div>
+</div>

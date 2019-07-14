@@ -1,37 +1,17 @@
-<div class="container">
+<div class="main_cont container">
   <% if @day >= 2 %>
     <span style="font-size: 30px">Forecast for <%= pluralize(5, 'day') %> - <%= @city %></span>
   <% else %>
     <span style="font-size: 30px">Forecast for 1 day</span>
   <% end %>
-  <span class="float-right">Choose the city<%= select_tag 'city',
-    options_for_select(@cities.collect{ |u| u }) %> </span>
-  <div class="apixu">
-    <h3>Apixu</h3>
-    <div class="row">
-      <% @apixu_forecast.each do |day| %>
-        <div class="col-md-2">
-          <b><%= day[:date] %></b><br>
-          day +<%= day[:max_temp] %><br>
-          night +<%= day[:min_temp] %><br>
-          <%= day[:condition] %><br>
-        </div>
-      <% end %>
-    </div>
-  </div>
-
-  <hr>
-  <div class="dark_sky">
-    <h3>Dark Sky</h3>
-    <div class="row">
-      <% @dark_forecast.each do |day| %>
-        <div class="col-md-2">
-          <b><%= day[:date] %></b><br>
-          +<%= day[:max_temp] %><br>
-          +<%= day[:min_temp] %><br>
-          <%= day[:condition] %><br>
-        </div>
-      <% end %>
-    </div>
-  </div>
+  <span class="float-right">
+    Choose the city
+    <%= select_tag 'city',options_for_select(@cities.collect{ |u| u }), id: 'city' %>
+    <button type="button" id="show" class="btn btn-sm btn-primary">Show</button>
+  </span>
+  <% if @day >= 2 %>
+      <%= render partial: "five_day" %>
+  <% elsif @day == 1 %>
+    <%= render partial: "one_day" %>
+  <% end %>
 </div>
