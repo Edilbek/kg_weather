@@ -6,7 +6,7 @@ class WeatherController < ApplicationController
   def forecast
     @city = params[:city]
     @day  = params[:day].to_i
-    @cities = ["Bishkek", "Talas", "Batket"]
+    @cities = ["Bishkek", "Talas", "Batken"]
     @days = [1, 2, 3, 4, 5]
     @apixu_forecast = WeatherGemKg::Generator.new("#{@city}", @day,
       WeatherGemKg::Clients::Apixu.new).generate_me

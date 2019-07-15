@@ -17,12 +17,17 @@
 //= require jquery_ujs
 //= require popper
 //= require bootstrap-sprockets
-// $(document).ready(function() {
-//   $('#show').click(function(event){
-//       city = $("#city").val();
-//       day = $("#day").val();
-//       current_url = window.location['href'];
-//       console.log(city, day)
-//       console.log(current_url)
-//   });
-// });
+$(document).ready(function() {
+  $('#show').click(function(event){
+      city = $("#city").val();
+      day = $("#day").val();
+      var currentUrl = window.location.href;
+      var url = new URL(currentUrl);
+      url.searchParams.set("city", city); // setting your param
+      if (day >= 2) {
+        url.searchParams.set("day", day); // setting your param
+      }
+      var newUrl = url.href;
+      window.location.href = newUrl;
+  });
+});

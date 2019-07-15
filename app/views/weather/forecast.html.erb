@@ -7,10 +7,13 @@
   <span class="float-right">
     Choose the city
     <%= select_tag 'city',options_for_select(@cities.collect{ |u| u }), id: 'city' %>
+    <% if @day >= 2 %>
+      <%= select_tag 'day',options_for_select(@days.collect{ |u| u }), id: 'day' %>
+    <% end %>
     <button type="button" id="show" class="btn btn-sm btn-primary">Show</button>
   </span>
   <% if @day >= 2 %>
-      <%= render partial: "five_day" %>
+      <%= render partial: "another_day" %>
   <% elsif @day == 1 %>
     <%= render partial: "one_day" %>
   <% end %>

@@ -18,8 +18,8 @@
           <h4><%= @city %></h4>
           <%= day[:date] %> |
           <p class="float-right"><%= day[:condition] %></p><br>
-          +<%= day[:max_temp] %><br>
-          +<%= day[:min_temp] %><br>
+          day +<%= day[:max_temp] %><br>
+          night +<%= day[:min_temp] %><br>
       <% end %>
     </div>
   </div>
